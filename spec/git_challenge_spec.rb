@@ -6,12 +6,12 @@ describe "Git Challenge" do
   end
 
   it 'stages all files to be committed' do
-    your_answer = "git status"
+    your_answer = "git add ."
     expect(your_answer).to satisfy {|s| answer_2.include?(s.downcase) }
   end
 
   it 'commits staged files with the message "initial commit"' do 
-    your_answer = "git add"
+    your_answer = "git commit -m 'initial commit'"
     expect(your_answer).to satisfy {|s| answer_3.include?(s.downcase) }
   end
 
@@ -21,12 +21,12 @@ describe "Git Challenge" do
   end
 
   it "pushes the committed changes on the master branch to a remote repo which the 'origin' remote points to" do 
-    your_answer = "git push -u origin master"
+    your_answer = "git push origin master"
     expect(your_answer).to eq(answer_5) 
   end
 
   it 'creates a new branch called new-feature' do 
-    your_answer = "git checkout -b new-feature"
+    your_answer = "git branch new-feature"
     expect(your_answer).to eq(answer_6)
   end
 
